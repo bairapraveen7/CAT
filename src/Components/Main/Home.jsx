@@ -1,7 +1,68 @@
-import { Header } from "../layout/Header"
+import { Fragment } from "react";
+import { Header } from "../layout/Header";
+import {
+  Button,
+  Checkbox,
+  Container,
+  FormControlLabel,
+  FormGroup,
+  TextField,
+  Typography,
+} from "@mui/material";
+import classes from "./Home.module.css";
+import { CloudUpload } from "@mui/icons-material";
 
 export const Home = () => {
-    return (
-        <Header />
-    )
-}
+  return (
+    <Fragment>
+      <div className={classes.home}>
+        <div className={classes.headline}>
+          <div className={classes.mainText}>
+            <Typography variant="h2">
+              Step into the <span>Future of Innovation</span> with Us
+            </Typography>
+          </div>
+          <div className={classes.subText}>
+            <Typography variant="p">
+              A tool that translates Contract Terms & Conditions to "Process
+              language/code" and interfaces with the Pricing Database to create
+              the most reliable source of data for PBM Ops
+            </Typography>
+          </div>
+        </div>
+        <div className={classes.form}>
+          <div className={classes.formNormal}>
+            <TextField size="small" placeholder="Client Name" />
+            <TextField size="small" placeholder="Agreement Number" />
+            <FormGroup>
+              <FormControlLabel
+                size="small"
+                control={<Checkbox />}
+                label="Signed Contract*"
+              />
+            </FormGroup>
+            <Button
+  component="label"
+  role={undefined}
+  variant="contained"
+  tabIndex={-1}
+  startIcon={<CloudUpload />}
+>
+  Upload file
+   
+</Button>
+          </div>
+          <FormGroup>
+            <FormControlLabel size="small" control={<Checkbox />} label="Audit" />
+          </FormGroup>
+          <div className={classes.formAudit}>
+            <TextField size="small" placeholder="Service Now Task Number" />
+            <TextField size="small" placeholder="PDFID##" />
+            <TextField size="small" placeholder="PDF Version ID" />
+          </div>
+          <Button variant="contained" >Submit</Button>
+        </div>
+      </div>
+    </Fragment>
+  );
+};

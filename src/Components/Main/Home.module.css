@@ -1,0 +1,43 @@
+.home{
+    margin: 4em 0 0 8em;
+    text-align: left;
+}
+
+.headline{
+    width: 50%;
+}
+
+.mainText{
+  
+  color: #8e8e8e;
+}
+
+.mainText h2{
+    font-weight: 500;
+}
+
+.mainText span{
+    color: #002277;
+}
+
+.subText{
+    margin: 1em 0 0 0;
+    width: 80%;
+    color: #8e8e8e;
+}
+
+ 
+
+.formNormal{
+   display:flex;
+   justify-content: space-between;
+   width: 70%;
+   margin: 2em 0;
+}
+
+.formAudit{
+  display: flex;
+  justify-content: space-between;
+  width:60%;
+  margin: 0.5em 0 3em;
+}
