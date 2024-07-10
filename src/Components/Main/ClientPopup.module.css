@@ -1,0 +1,29 @@
+
+.popup{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f1f3f7;
+}
+.table{
+    width: 80%;
+    margin: 4em auto;
+    border-collapse: collapse;
+    border-spacing: 0 1em;
+}
+
+.table th{
+    color: #002277;
+}
+
+.table tr{
+    background-color: white;
+    border: 1px solid black;
+    margin: 1em 0;
+}
+
+.table tr td{
+    padding: 1em;
+}

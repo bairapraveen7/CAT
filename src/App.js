@@ -4,6 +4,7 @@ import { HomePage } from './Pages/homePage';
 import { ThemeProvider } from '@emotion/react';
 import { createTheme } from '@mui/material';
 import { Header } from './Components/layout/Header';
+import { ClientPopup } from './Components/Main/ClientPopup';
 
 function App() {
   const theme = createTheme({
@@ -22,7 +23,8 @@ function App() {
     <ThemeProvider theme={theme}>
     <div className="App">
       <Header />
-      <HomePage />
+      {/* <HomePage /> */}
+      <ClientPopup />
     </div>
     </ThemeProvider>
   );
