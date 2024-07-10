@@ -21,8 +21,8 @@ export const Header = () => {
       </div>
       <div className={classes.headerMenu}>
         <Button variant="text">Overview</Button>
-        <Button variant="text">Upload Page</Button>
-        <Button variant="text">Data Dictionary</Button>
+        <Button variant="text" sx={{mx:4}}>Upload Page</Button>
+        <Button variant="text" sx={{mx:4}}>Data Dictionary</Button>
         <Button variant="text">User Guide</Button>
       </div>
       <div className={classes.profile}>

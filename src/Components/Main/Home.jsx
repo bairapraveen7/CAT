@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Header } from "../layout/Header";
 import {
   Button,
@@ -13,6 +13,11 @@ import classes from "./Home.module.css";
 import { CloudUpload } from "@mui/icons-material";
 
 export const Home = () => {
+  const [AuditFormVisibility, setAuditFormVisibility] = useState(false);
+  const handleChangeAudit = () => {
+    setAuditFormVisibility(prev => !prev)
+  }
+  
   return (
     <Fragment>
       <div className={classes.home}>
@@ -42,25 +47,36 @@ export const Home = () => {
               />
             </FormGroup>
             <Button
-  component="label"
-  role={undefined}
-  variant="contained"
-  tabIndex={-1}
-  startIcon={<CloudUpload />}
->
-  Upload file
-   
-</Button>
+              component="label"
+              role={undefined}
+              variant="contained"
+              tabIndex={-1}
+              startIcon={<CloudUpload />}
+            >
+              Upload file
+            </Button>
           </div>
           <FormGroup>
-            <FormControlLabel size="small" control={<Checkbox />} label="Audit" />
+            <FormControlLabel
+              size="small"
+              control={<Checkbox />}
+              label="Audit"
+              onChange={handleChangeAudit}
+              sx={{mb: 2}}
+            />
           </FormGroup>
-          <div className={classes.formAudit}>
+          {
+            AuditFormVisibility && (
+              <div className={classes.formAudit}>
             <TextField size="small" placeholder="Service Now Task Number" />
             <TextField size="small" placeholder="PDFID##" />
             <TextField size="small" placeholder="PDF Version ID" />
           </div>
-          <Button variant="contained" >Submit</Button>
+            )
+          }
+          <Button variant="contained" sx={{ backgroundColor: "#002277", my: 4 }}>
+            Submit
+          </Button>
         </div>
       </div>
     </Fragment>
