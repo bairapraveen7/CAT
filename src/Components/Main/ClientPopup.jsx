@@ -56,25 +56,25 @@ export const ClientPopup = () => {
 return (
     <div className={classes.popup}>
     <table className={classes.table}>
+        
         <tr>
-          <th>File Name</th>
-          <th>Request Number</th>
-          <th>PDF ID</th>
-          <th>PDF Version ID</th>
-          <th>Service Now</th>
+            <th>FileName</th>
+            <th>RequestNumber</th>
+            <th>PDFID</th>
+            <th>PDFVersionID</th>
+            <th>ServiceNow</th>
         </tr>
         {
-          tableData.map((eachItem) => <tr>
-              <td>{eachItem.FileName}</td>
-              <td>{eachItem.RequestNumber}</td>
-              <td>{eachItem.PDFID}</td>
-              <td>{eachItem.PDFVersionID}</td>
-              <td>{eachItem.ServiceNow}</td>
-              <td></td>
-              <td></td>
-          </tr>)
+            tableData.map((item) => <tr>
+                <td>{item.FileName}</td>
+                <td>{item.RequestNumber}</td>
+                <td>{item.PDFID}</td>
+                <td>{item.PDFVersionID}</td>
+                <td>{item.ServiceNow}</td>
+            </tr>)
         }
     </table>
+    
     </div>
 )
 
