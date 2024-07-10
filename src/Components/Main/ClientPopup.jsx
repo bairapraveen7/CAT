@@ -1,4 +1,6 @@
+import { Button, Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import classes from "./ClientPopup.module.css"
+import { Menu } from "@mui/icons-material";
 
 export const ClientPopup = () => {
     const tableData = [
@@ -71,9 +73,26 @@ return (
                 <td>{item.PDFID}</td>
                 <td>{item.PDFVersionID}</td>
                 <td>{item.ServiceNow}</td>
+                <td> <FormGroup>
+              <FormControlLabel
+                size="small"
+                control={<Checkbox />}
+                label="Audit"
+              />
+            </FormGroup></td>
+            <td><Menu /></td>
             </tr>)
         }
     </table>
+
+    <div className={classes.lastRow}>
+        <Button>Add Row</Button>
+        <Button variant="contained">Submit</Button>
+    </div>
+
+    <div className="2">
+
+    </div>
     
     </div>
 )
