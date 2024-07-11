@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { Header } from "../layout/Header";
 import {
+  Autocomplete,
   Button,
   Checkbox,
   Container,
@@ -43,10 +44,12 @@ export const Home = () => {
         id="free-solo-2-demo"
         disableClearable
         options={clients}
+        sx={{width: 200}}
         renderInput={(params) => (
           <TextField
             {...params}
             label="Search input"
+            size="small"
             InputProps={{
               ...params.InputProps,
               type: 'search',

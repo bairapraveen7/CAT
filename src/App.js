@@ -23,8 +23,8 @@ function App() {
     <ThemeProvider theme={theme}>
     <div className="App">
       <Header />
-      {/* <HomePage /> */}
-      <ClientPopup />
+      <HomePage />
+      {/* <ClientPopup /> */}
     </div>
     </ThemeProvider>
   );

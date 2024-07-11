@@ -87,7 +87,7 @@ export const ClientPopup = () => {
 
             <div className={classes.pagination}>
                 <div className="paginateText">
-                <Typography variant="p">Showing {page*n+1} to {((page+1)*n > tableData.length ? tableData.length : (page+1)*n)} entries out of {tableData.length}</Typography>
+                <Typography variant="p">Showing {page*n+1} to {((page+1)*n > ClientSpecific.length ? ClientSpecific.length : (page+1)*n)} entries out of {ClientSpecific.length}</Typography>
                 </div>
                 <div>
                 <ReactPaginate
