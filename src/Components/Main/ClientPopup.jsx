@@ -1,4 +1,4 @@
-import { Button, Checkbox, Dialog, FormControlLabel, FormGroup, Grid, Popover, Typography } from "@mui/material";
+import { Button, Checkbox, Dialog, Divider, FormControlLabel, FormGroup, Grid, Popover, Typography } from "@mui/material";
 import classes from "./ClientPopup.module.css"
 import { AddCircle, Menu } from "@mui/icons-material";
 import { useEffect, useState } from "react";
@@ -9,7 +9,7 @@ import { blue, red } from "@mui/material/colors";
 export const ClientPopup = () => {
     const [page, setPage] = useState(0);
     const [filterData, setFilterData] = useState();
-    const [open,setOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
     const n = 3
 
     const tableData = [
@@ -72,9 +72,16 @@ export const ClientPopup = () => {
         );
     }, [page]);
 
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+      };
+    
     const handleClose = () => {
-        setOpen(false);
-    }
+        setAnchorEl(null);
+      };
+
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
 
     return (
         <div className={classes.popup}>
@@ -101,9 +108,16 @@ export const ClientPopup = () => {
                                 label="Audit"
                             />
                         </FormGroup></td>
-                        <td onClick={() => setOpen(true)}><Menu /></td>
-                        <Popover onClose={handleClose} open={open} >
-             <h1>Hello</h1>
+                        <td aria-describedby={id} onClick={handleClick} className={anchorEl ? classes.popoverIconHighlight : classes.popoverIcon}><Menu /></td>
+                        <Popover id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }} >
+             <PopoverContent />
         </Popover>
                     </tr>)
                 }
@@ -122,7 +136,7 @@ export const ClientPopup = () => {
 
             <div className={classes.pagination}>
                 <div className="paginateText">
-                <Typography variant="p">Showing 1 to {n} entries out of {tableData.length}</Typography>
+                <Typography variant="p">Showing {page*n+1} to {((page+1)*n > tableData.length ? tableData.length : (page+1)*n)} entries out of {tableData.length}</Typography>
                 </div>
                 <div>
                 <ReactPaginate
@@ -145,4 +159,34 @@ export const ClientPopup = () => {
         </div>
     )
 
+}
+
+const PopoverContent = () => {
+    return (
+        <div className={classes.popoverContent}>
+            <div className={classes.popoverItem}>
+                <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>Modified Date</Typography>
+                <Typography variant="p"sx={{fontSize: '0.6em', my: 1}}>04/03/2024</Typography>
+            </div>
+            <Divider />
+            <div className={classes.popoverItem}>
+                <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>Modified Date</Typography>
+                <Typography variant="p" sx={{fontSize: '0.6em', my: 1}}>04/03/2024</Typography>
+                
+            </div>
+            <Divider />
+            <div className={classes.popoverItem}>
+                <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>Modified Date</Typography>
+                <Typography variant="p" sx={{fontSize: '0.6em', my: 1}}>04/03/2024</Typography>
+                
+            </div>
+            <Divider />
+            <div className={classes.popoverItem}>
+                <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>Modified Date</Typography>
+                <Typography variant="p" sx={{fontSize: '0.6em', my: 1}}>04/03/2024</Typography>
+                
+            </div>
+            <Divider />
+        </div>
+    )
 }

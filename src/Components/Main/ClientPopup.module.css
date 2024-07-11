@@ -22,6 +22,26 @@
     font-weight: bold;
 }
 
+.popoverContent{
+    text-align: center;
+    background-color: #daf5fa;
+    width: 6em;
+    font-size: 0.7em;
+}
+
+.popoverItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.popoverIconHighlight{
+    background-color: #daf5fa;
+    border-left: blue;
+}
+
 .active{
     background-color: #1976d2;
     color: white;
