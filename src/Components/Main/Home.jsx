@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import classes from "./Home.module.css";
 import { CloudUpload } from "@mui/icons-material";
+import { clients } from "../../Data/Clients";
 
 export const Home = () => {
   const [AuditFormVisibility, setAuditFormVisibility] = useState(false);
@@ -37,7 +38,22 @@ export const Home = () => {
         </div>
         <div className={classes.form}>
           <div className={classes.formNormal}>
-            <TextField size="small" placeholder="Client Name" />
+          <Autocomplete
+        freeSolo
+        id="free-solo-2-demo"
+        disableClearable
+        options={clients}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Search input"
+            InputProps={{
+              ...params.InputProps,
+              type: 'search',
+            }}
+          />
+        )}
+      />
             <TextField size="small" placeholder="Agreement Number" />
             <FormGroup>
               <FormControlLabel
