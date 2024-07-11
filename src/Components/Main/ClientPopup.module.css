@@ -8,26 +8,31 @@
     justify-content: center;
     align-items: center;
 }
-/* .table{
+
+.pagination{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 80%;
-    margin: 4em auto;
-    border-collapse: collapse;
-    border-spacing: 0 10px;
+    margin: 0 auto;
 }
 
-.table th{
-    color: #002277;
+.pageItem{
+    padding: 0 0.5em;
+    font-weight: bold;
 }
 
-.table tr{
-    background-color: white;
-    border: 1px solid black;
-    margin: 1em 0;
+.active{
+    background-color: #1976d2;
+    color: white;
+    border-radius: 0.2em;
 }
 
-.table tr td{
-    padding: 1em;
-} */
+.paginationNumbers{
+    list-style-type: none;
+    display: flex;
+    cursor: pointer;
+}
 
 .table{
     width: 80%;
@@ -61,8 +66,7 @@
 }
 
 .lastRow{
-    display: flex;
-    justify-content: flex-start;
+    margin: 1em auto;
     width: 80%;
 }
 
