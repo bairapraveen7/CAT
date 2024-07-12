@@ -23,10 +23,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
-      {/* <Header />
-      <HomePage /> */}
-      {/* <ClientPopup /> */}
-      <ExampleWithProviders />
+      <Header />
+      <HomePage /> 
+      {/* <ExampleWithProviders /> */}
     </div>
     </ThemeProvider>
   );

@@ -1,7 +1,7 @@
 import { Button, Checkbox, Dialog, Divider, FormControlLabel, FormGroup, Grid, Popover, Typography } from "@mui/material";
 import classes from "./ClientPopup.module.css"
 import { AddCircle, CancelPresentation, Menu } from "@mui/icons-material";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactPaginate from 'react-paginate';
 import { ClientSpecific } from "../../Data/ClientSpecific";
 import { blue, red } from "@mui/material/colors";
@@ -11,9 +11,8 @@ export const ClientPopup = ({setOpenClientPopup}) => {
     const [page, setPage] = useState(0);
     const [filterData, setFilterData] = useState();
     const [anchorEl, setAnchorEl] = useState(null);
-    const n = 10
-
-     
+    const [popoverData,setPopoverData] = useState({});
+    const n = 3
 
     useEffect(() => {
         setFilterData(
@@ -23,12 +22,14 @@ export const ClientPopup = ({setOpenClientPopup}) => {
         );
     }, [page]);
 
-    const handleClick = (event) => {
+    const handleClick = (event,popoverData) => {
         setAnchorEl(event.currentTarget);
+        setPopoverData(popoverData);
       };
     
     const handleClose = () => {
         setAnchorEl(null);
+        setPopoverData({})
       };
 
     const open = Boolean(anchorEl);
@@ -63,16 +64,16 @@ export const ClientPopup = ({setOpenClientPopup}) => {
                                 label="Audit"
                             />
                         </FormGroup></td>
-                        <td aria-describedby={id} onClick={handleClick} className={anchorEl ? classes.popoverIconHighlight : classes.popoverIcon}><Menu /></td>
+                        <td aria-describedby={id} onClick={(event) => handleClick(event,{...item.Subsidiary,id: item.id})} className={item?.id === popoverData?.id ? classes.popoverIconHighlight : classes.popoverIcon}><Menu /></td>
                         <Popover id={id}
         open={open}
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
+          vertical: 'top',
+          horizontal: 'right',
         }} >
-             <PopoverContent />
+             <PopoverContent popoverData={popoverData} />
         </Popover>
                     </tr>)
                 }
@@ -84,7 +85,7 @@ export const ClientPopup = ({setOpenClientPopup}) => {
                 <Button startIcon={<AddCircle />}>Add Row</Button>
                 </Grid>
                 <Grid item xs={6}>
-                <Button variant="contained">Submit</Button>
+                <Button variant="contained" sx={{backgroundColor: '#002277'}}>Submit</Button>
                 </Grid>
             </Grid>
         </div>
@@ -116,32 +117,37 @@ export const ClientPopup = ({setOpenClientPopup}) => {
 
 }
 
-const PopoverContent = () => {
+const PopoverContent = ({popoverData}) => {
     return (
         <div className={classes.popoverContent}>
             <div className={classes.popoverItem}>
                 <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>Modified Date</Typography>
-                <Typography variant="p"sx={{fontSize: '0.6em', my: 1}}>04/03/2024</Typography>
+                <Typography variant="p"sx={{fontSize: '0.6em', my: 1}}>{popoverData['Modified Date']}</Typography>
             </div>
             <Divider />
             <div className={classes.popoverItem}>
-                <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>Modified Date</Typography>
-                <Typography variant="p" sx={{fontSize: '0.6em', my: 1}}>04/03/2024</Typography>
+                <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>Upload Date</Typography>
+                <Typography variant="p" sx={{fontSize: '0.6em', my: 1}}>{popoverData['Upload Date']}</Typography>
                 
             </div>
             <Divider />
             <div className={classes.popoverItem}>
-                <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>Modified Date</Typography>
-                <Typography variant="p" sx={{fontSize: '0.6em', my: 1}}>04/03/2024</Typography>
+                <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>Uploaded By</Typography>
+                <Typography variant="p" sx={{fontSize: '0.6em', my: 1}}>{popoverData['Uploaded By']}</Typography>
                 
             </div>
             <Divider />
             <div className={classes.popoverItem}>
-                <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>Modified Date</Typography>
-                <Typography variant="p" sx={{fontSize: '0.6em', my: 1}}>04/03/2024</Typography>
+                <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>File Status</Typography>
+                <Typography variant="p" sx={{fontSize: '0.6em', my: 1}}>{popoverData['File Status']}</Typography>
                 
             </div>
             <Divider />
+            <div className={classes.popoverItem}>
+                <Typography variant="p" sx={{color:'#002277', fontWeight: 'bold'}}>Review Version</Typography>
+                <Typography variant="p" sx={{fontSize: '0.6em', my: 1}}>{popoverData['Review Version']}</Typography>
+                
+            </div>
         </div>
     )
 }
