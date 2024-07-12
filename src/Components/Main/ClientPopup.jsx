@@ -1,17 +1,17 @@
 import { Button, Checkbox, Dialog, Divider, FormControlLabel, FormGroup, Grid, Popover, Typography } from "@mui/material";
 import classes from "./ClientPopup.module.css"
-import { AddCircle, Menu } from "@mui/icons-material";
+import { AddCircle, CancelPresentation, Menu } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import ReactPaginate from 'react-paginate';
 import { ClientSpecific } from "../../Data/ClientSpecific";
 import { blue, red } from "@mui/material/colors";
 
 
-export const ClientPopup = () => {
+export const ClientPopup = ({setOpenClientPopup}) => {
     const [page, setPage] = useState(0);
     const [filterData, setFilterData] = useState();
     const [anchorEl, setAnchorEl] = useState(null);
-    const n = 3
+    const n = 10
 
      
 
@@ -36,6 +36,10 @@ export const ClientPopup = () => {
 
     return (
         <div className={classes.popup}>
+             
+            <Button startIcon={<CancelPresentation />} sx={{justifyContent: 'flex-end', width: '1em', margin: '0 5em 0 auto'}} onClick={() => setOpenClientPopup(false)}></Button>
+           
+             
             <table className={classes.table}>
 
                 <tr>
