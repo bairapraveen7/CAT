@@ -44,11 +44,11 @@ export const ClientPopup = ({setOpenClientPopup}) => {
             <table className={classes.table}>
 
                 <tr>
-                    <th>FileName</th>
-                    <th>RequestNumber</th>
-                    <th>PDFID</th>
-                    <th>PDFVersionID</th>
-                    <th>ServiceNow</th>
+                    <th>File Name</th>
+                    <th>Request Number</th>
+                    <th>PDF ID</th>
+                    <th>PDF Version ID</th>
+                    <th>Service Now</th>
                 </tr>
                 {
                     filterData && filterData.map((item) => <tr>

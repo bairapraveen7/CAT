@@ -1,6 +1,7 @@
 
 .popup{
     width: 100%;
+    font-size: 0.8em;
     background-color: #f1f3f7;
     display: flex;
     flex-direction: column;
@@ -12,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -54,7 +55,7 @@
 }
 
 .table{
-    width: 80%;
+    width: 90%;
     border-spacing: 0 0.5em;
 }
 
@@ -76,6 +77,7 @@
 
 .table th{
     padding: 1em;
+    font-weight: 600;
     color: #002277;
     text-align: left;
 }
@@ -86,6 +88,6 @@
 
 .lastRow{
     margin: 1em auto;
-    width: 80%;
+    width: 90%;
 }
 

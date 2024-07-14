@@ -5,7 +5,6 @@ import { ThemeProvider } from '@emotion/react';
 import { createTheme } from '@mui/material';
 import { Header } from './Components/layout/Header';
 import { ClientPopup } from './Components/Main/ClientPopup';
-import ExampleWithProviders from './Components/Main/Just';
 
 function App() {
   const theme = createTheme({

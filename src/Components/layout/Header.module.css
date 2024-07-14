@@ -1,3 +1,7 @@
+.firstLetterOrange{
+    color: #ff5d2f;
+}
+
 .header{
     display: flex;
     justify-content: space-between;

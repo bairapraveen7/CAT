@@ -93,7 +93,6 @@ export const Home = () => {
                   size="small"
                   control={<Checkbox onChange={handleChangeAudit} />}
                   label="Audit"
-                  sx={{ mb: 2 }}
                 />
               </FormGroup>
               {AuditFormVisibility && (
