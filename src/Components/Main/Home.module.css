@@ -8,13 +8,13 @@
 }
 
 .mainText{
-  
   color: #8e8e8e;
 }
 
 .mainText h2{
     font-family: "Quicksand";
-    font-size: 3em;
+    font-weight: 600;
+    font-size: 3.5em;
 }
 
 .mainText span{
@@ -23,7 +23,7 @@
 
 .subText{
     margin: 1em 0 0 0;
-    font-size: 1em;
+    font-size: 1.2em;
     line-height: 1.2;
     color: #40454d;
 }
@@ -32,15 +32,14 @@
     font-size: 0.8em;
 }
 
-.formNormal{
-   display:flex;
-   justify-content: space-between;
-   width: 65%;
-   margin: 2em 0;
+.homeInput::placeholder{
+    font-size: 0.775em;
 }
 
-.formAudit{
-  display: flex;
-  justify-content: space-between;
-  width:55%;
+.formField{
+    width: 15rem;
+}
+
+.formNormal{
+    margin: 2em 0em;
 }

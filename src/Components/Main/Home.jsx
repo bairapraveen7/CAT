@@ -8,8 +8,11 @@ import {
   Dialog,
   FormControlLabel,
   FormGroup,
+  Grid,
   TextField,
   Typography,
+  makeStyles,
+  styled,
 } from "@mui/material";
 import classes from "./Home.module.css";
 import { CancelPresentation, CloudUpload } from "@mui/icons-material";
@@ -48,63 +51,109 @@ export const Home = () => {
               </div>
             </div>
             <div className={classes.form}>
-              <div className={classes.formNormal}>
-                <Autocomplete
-                  freeSolo
-                  id="free-solo-2-demo"
-                  disableClearable
-                  options={clients}
-                  sx={{ width: 200 }}
-                  onChange={() => {
-                    setOpenClientPopup(true);
-                  }}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      label="Search input"
+              <Grid container>
+              <Grid container className={classes.formNormal}>
+                <Grid item xs={2.5}>
+                  <Autocomplete
+                    freeSolo
+                    id="free-solo-2-demo"
+                    disableClearable
+                    options={clients}
+                    className={classes.formField}
+                    onChange={() => {
+                      setOpenClientPopup(true);
+                    }}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        placeholder="Client Name"
+                        size="small"
+                        InputProps={{
+                          ...params.InputProps,
+                          type: "search",
+                          classes: {
+                            input: classes.homeInput
+                          }
+                        }}
+                      />
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={2.5}>
+                  <TextField size="small" placeholder="Agreement Number" className={classes.formField} InputProps={{
+                    classes: {
+                      input: classes.homeInput
+                    }
+                  }} />
+                </Grid>
+                <Grid item xs={2.5}>
+                  <FormGroup>
+                    <FormControlLabel
                       size="small"
-                      InputProps={{
-                        ...params.InputProps,
-                        type: "search",
-                      }}
+                      control={<Checkbox />}
+                      className={classes.formCheckbox}
+                      label={
+                        <Typography sx={{fontFamily: "Quicksand",fontSize: '0.8rem'}}>Signed Contract*</Typography>
+                      }
                     />
-                  )}
-                />
-                <TextField size="small" placeholder="Agreement Number" />
-                <FormGroup>
-                  <FormControlLabel
-                    size="small"
-                    control={<Checkbox />}
-                    label="Signed Contract*"
-                  />
-                </FormGroup>
-                <Button
-                  component="label"
-                  role={undefined}
-                  variant="contained"
-                  tabIndex={-1}
-                  startIcon={<CloudUpload />}
-                >
-                  Upload file
-                </Button>
-              </div>
-              <FormGroup sx={{width: '10%'}}>
-                <FormControlLabel
-                  size="small"
-                  control={<Checkbox onChange={handleChangeAudit} />}
-                  label="Audit"
-                />
-              </FormGroup>
-              {AuditFormVisibility && (
-                <div className={classes.formAudit}>
-                  <TextField
-                    size="small"
-                    placeholder="Service Now Task Number"
-                  />
-                  <TextField size="small" placeholder="PDFID##" />
-                  <TextField size="small" placeholder="PDF Version ID" />
-                </div>
-              )}
+                  </FormGroup>
+                </Grid>
+                <Grid item xs={2.5}>
+                  <Button
+                    component="label"
+                    role={undefined}
+                    variant="contained"
+                    tabIndex={-1}
+                    startIcon={<CloudUpload />}
+                  >
+                    Upload file
+                  </Button>
+                </Grid>
+                </Grid>
+                <Grid item xs={12}>
+                  <FormGroup sx={{ width: '10%' }}>
+                    <FormControlLabel
+                      size="small"
+                      control={<Checkbox onChange={handleChangeAudit} />}
+                      label={
+                        <Typography sx={{fontFamily: "Quicksand",fontSize: '0.8rem'}}>
+                          Audit
+                        </Typography>
+                      }
+                    />
+                  </FormGroup>
+                </Grid>
+                {AuditFormVisibility && (
+                  <>
+                    <Grid item xs={2.5}>
+                      <TextField
+                        size="small"
+                        placeholder="Service Now Task Number"
+                        className={classes.formField}
+                        InputProps={{
+                          classes: {
+                            input: classes.homeInput
+                          }
+                        }}
+                      />
+                    </Grid>
+                    <Grid item xs={2.5}>
+                      <TextField size="small" placeholder="PDFID##" className={classes.formField} InputProps={{
+                    classes: {
+                      input: classes.homeInput
+                    }
+                  }} />
+                    </Grid>
+                    <Grid item xs={2.5}>
+                      <TextField size="small" placeholder="PDF Version ID" className={classes.formField} InputProps={{
+                    classes: {
+                      input: classes.homeInput
+                    }
+                  }} />
+                    </Grid>
+                  </>
+                )}
+              </Grid>
               <Button
                 variant="contained"
                 sx={{ backgroundColor: "#002277", my: 4 }}
