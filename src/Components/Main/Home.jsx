@@ -23,35 +23,36 @@ export const Home = () => {
   const [AuditFormVisibility, setAuditFormVisibility] = useState(false);
   const [openClientPopup, setOpenClientPopup] = useState(false);
 
+  const OpenClientPopup = ({ children }) => openClientPopup == true && <Fragment>{children}</Fragment>;
+  const CloseClientPopup = ({ children }) => openClientPopup == false && <Fragment>{children}</Fragment>
+
   const handleChangeAudit = () => {
     setAuditFormVisibility((prev) => !prev);
   };
 
   return (
     <Fragment>
-      {openClientPopup == true ? (
-        <Fragment>
-          <ClientPopup setOpenClientPopup={setOpenClientPopup} />
-        </Fragment>
-      ) : (
-        <Fragment>
-          <div className={classes.home}>
-            <div className={classes.headline}>
-              <div className={classes.mainText}>
-                <Typography variant="h2">
-                  Step into the <span>Future of Innovation</span> with Us
-                </Typography>
-              </div>
-              <div className={classes.subText}>
-                <Typography variant="p">
-                  A tool that translates Contract Terms & Conditions to "Process
-                  language/code" and interfaces with the Pricing Database to
-                  create the most reliable source of data for PBM Ops
-                </Typography>
-              </div>
+      <OpenClientPopup>
+        <ClientPopup setOpenClientPopup={setOpenClientPopup} />
+      </OpenClientPopup>
+      <CloseClientPopup>
+        <div className={classes.home}>
+          <div className={classes.headline}>
+            <div className={classes.mainText}>
+              <Typography variant="h2">
+                Step into the <span>Future of Innovation</span> with Us
+              </Typography>
             </div>
-            <div className={classes.form}>
-              <Grid container>
+            <div className={classes.subText}>
+              <Typography variant="p">
+                A tool that translates Contract Terms & Conditions to "Process
+                language/code" and interfaces with the Pricing Database to
+                create the most reliable source of data for PBM Ops
+              </Typography>
+            </div>
+          </div>
+          <div className={classes.form}>
+            <Grid container>
               <Grid container className={classes.formNormal}>
                 <Grid item xs={2.5}>
                   <Autocomplete
@@ -71,20 +72,13 @@ export const Home = () => {
                         InputProps={{
                           ...params.InputProps,
                           type: "search",
-                          classes: {
-                            input: classes.homeInput
-                          }
                         }}
                       />
                     )}
                   />
                 </Grid>
                 <Grid item xs={2.5}>
-                  <TextField size="small" placeholder="Agreement Number" className={classes.formField} InputProps={{
-                    classes: {
-                      input: classes.homeInput
-                    }
-                  }} />
+                  <TextField size="small" placeholder="Agreement Number" className={classes.formField} />
                 </Grid>
                 <Grid item xs={2.5}>
                   <FormGroup>
@@ -93,7 +87,7 @@ export const Home = () => {
                       control={<Checkbox />}
                       className={classes.formCheckbox}
                       label={
-                        <Typography sx={{fontFamily: "Quicksand",fontSize: '0.8rem'}}>Signed Contract*</Typography>
+                        <Typography>Signed Contract*</Typography>
                       }
                     />
                   </FormGroup>
@@ -109,61 +103,48 @@ export const Home = () => {
                     Upload file
                   </Button>
                 </Grid>
-                </Grid>
-                <Grid item xs={12}>
-                  <FormGroup sx={{ width: '10%' }}>
-                    <FormControlLabel
-                      size="small"
-                      control={<Checkbox onChange={handleChangeAudit} />}
-                      label={
-                        <Typography sx={{fontFamily: "Quicksand",fontSize: '0.8rem'}}>
-                          Audit
-                        </Typography>
-                      }
-                    />
-                  </FormGroup>
-                </Grid>
-                {AuditFormVisibility && (
-                  <>
-                    <Grid item xs={2.5}>
-                      <TextField
-                        size="small"
-                        placeholder="Service Now Task Number"
-                        className={classes.formField}
-                        InputProps={{
-                          classes: {
-                            input: classes.homeInput
-                          }
-                        }}
-                      />
-                    </Grid>
-                    <Grid item xs={2.5}>
-                      <TextField size="small" placeholder="PDFID##" className={classes.formField} InputProps={{
-                    classes: {
-                      input: classes.homeInput
-                    }
-                  }} />
-                    </Grid>
-                    <Grid item xs={2.5}>
-                      <TextField size="small" placeholder="PDF Version ID" className={classes.formField} InputProps={{
-                    classes: {
-                      input: classes.homeInput
-                    }
-                  }} />
-                    </Grid>
-                  </>
-                )}
               </Grid>
-              <Button
-                variant="contained"
-                sx={{ backgroundColor: "#002277", my: 4 }}
-              >
-                Submit
-              </Button>
-            </div>
+              <Grid item xs={12}>
+                <FormGroup sx={{ width: '15%' }}>
+                  <FormControlLabel
+                    size="small"
+                    control={<Checkbox checked={AuditFormVisibility} onChange={handleChangeAudit} />}
+                    label={
+                      <Typography>
+                        Audit
+                      </Typography>
+                    }
+                  />
+                </FormGroup>
+              </Grid>
+              {AuditFormVisibility && (
+                <>
+                  <Grid item xs={2.5}>
+                    <TextField
+                      size="small"
+                      placeholder="Service Now Task Number"
+                      className={classes.formField}
+                    />
+                  </Grid>
+                  <Grid item xs={2.5}>
+                    <TextField size="small" placeholder="PDFID##" className={classes.formField} />
+                  </Grid>
+                  <Grid item xs={2.5}>
+                    <TextField size="small" placeholder="PDF Version ID" className={classes.formField} />
+                  </Grid>
+                </>
+              )}
+            </Grid>
+            <Button
+              variant="contained"
+              sx={{ backgroundColor: "#002277", my: 4 }}
+            >
+              Submit
+            </Button>
           </div>
-        </Fragment>
-      )}
+        </div>
+      </CloseClientPopup>
+
     </Fragment>
   );
 };

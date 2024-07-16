@@ -32,8 +32,6 @@
 
 .popoverContent{
     text-align: center;
-    width: 6em;
-    font-size: 1em;
 }
 
 .popoverItem{
@@ -80,8 +78,6 @@
     border-top-right-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
 }
-
-
 
 .table th{
     padding: 1em;

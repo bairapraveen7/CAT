@@ -9,7 +9,6 @@ import {
   Typography,
   createTheme,
 } from "@mui/material";
-import { ThemeProvider } from "@emotion/react";
 import PersonPinIcon from "@mui/icons-material/PersonPin";
 import classes from "./Header.module.css";
 
@@ -20,10 +19,10 @@ export const Header = () => {
         <Typography sx={{fontSize: '1.5em', fontStyle: 'italic'}}><span className={classes.firstLetterOrange}>C</span>ontract <span className={classes.firstLetterOrange}>A</span>nalysis <span className={classes.firstLetterOrange}>T</span>ool</Typography>
       </div>
       <div className={classes.headerMenu}>
-        <Link sx={{color: '#012277',textDecoration: 'none',fontWeight: 600, fontSize: '0.9em',fontFamily: 'Quicksand'}}>Overview</Link>
-        <Link sx={{color: '#012277',textDecoration: 'none',fontWeight: 600, fontSize: '0.9em', ml: 6, mr: 4,fontFamily: 'Quicksand'}}>Upload Page</Link>
-        <Link sx={{color: '#012277',textDecoration: 'none',fontWeight: 600, fontSize: '0.9em', ml:4, mr:6,fontFamily: 'Quicksand'}}>Data Dictionary</Link>
-        <Link sx={{color: '#012277',textDecoration: 'none',fontWeight: 600, fontSize: '0.9em',fontFamily: 'Quicksand'}}>User Guide</Link>
+        <Link sx={{color: '#012277',textDecoration: 'none',fontWeight: 600, fontSize: '0.9em'}}>Overview</Link>
+        <Link sx={{color: '#012277',textDecoration: 'none',fontWeight: 600, fontSize: '0.9em', ml: 6, mr: 4}}>Upload Page</Link>
+        <Link sx={{color: '#012277',textDecoration: 'none',fontWeight: 600, fontSize: '0.9em', ml:4, mr:6}}>Data Dictionary</Link>
+        <Link sx={{color: '#012277',textDecoration: 'none',fontWeight: 600, fontSize: '0.9em'}}>User Guide</Link>
       </div>
       <div className={classes.profile}>
         <Typography variant="p">Welcome</Typography>

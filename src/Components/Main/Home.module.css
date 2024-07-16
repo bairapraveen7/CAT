@@ -4,7 +4,7 @@
 }
 
 .headline{
-    width: 40%;
+    width: 42%;
 }
 
 .mainText{
@@ -28,13 +28,13 @@
     color: #40454d;
 }
 
-.form{
-    font-size: 0.8em;
-}
+ .form{
+    font-size: 0.9em;
+} 
 
-.homeInput::placeholder{
+/* .homeInput::placeholder{
     font-size: 0.775em;
-}
+} */
 
 .formField{
     width: 15rem;
