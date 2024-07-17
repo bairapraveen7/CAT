@@ -15,7 +15,7 @@ import {
   styled,
 } from "@mui/material";
 import classes from "./Home.module.css";
-import { CancelPresentation, CloudUpload } from "@mui/icons-material";
+import { CloudUpload } from "@mui/icons-material";
 import { clients } from "../../Data/Clients";
 import { ClientPopup } from "./ClientPopup";
 
@@ -135,16 +135,15 @@ export const Home = () => {
                 </>
               )}
             </Grid>
-            <Button
-              variant="contained"
-              sx={{ backgroundColor: "#002277", my: 4 }}
-            >
+              <Button
+                variant="contained"
+                sx={{ backgroundColor: "#002277", my: 4 }}
+              >
               Submit
             </Button>
           </div>
         </div>
       </CloseClientPopup>
-
     </Fragment>
   );
 };
