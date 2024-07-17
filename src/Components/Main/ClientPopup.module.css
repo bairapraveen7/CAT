@@ -4,15 +4,13 @@
 
 .popup{
     width: 100%;
-    position: absolute;
-    top: 75px;
-    bottom: 0px;
-    font-size: 0.8em;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
     font-weight: 600;
     background-color: #f1f3f7;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -25,7 +23,7 @@
 }
 
 .pageItem{
-    padding: 0 0.5em;
+    padding: 0 0.5rem;
     font-weight: bold;
 }
 
@@ -38,7 +36,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.5em;
+    padding: 0.5rem;
 }
 
 .popoverIconHighlight{
@@ -49,7 +47,7 @@
 .active{
     background-color: #1976d2;
     color: white;
-    border-radius: 0.2em;
+    border-radius: 0.2rem;
 }
 
 .paginationNumbers{
@@ -60,7 +58,7 @@
 
 .table{
     width: 90%;
-    border-spacing: 0 0.5em;
+    border-spacing: 0 0.5rem;
    
 }
 
@@ -69,30 +67,30 @@
 }
 
 .table td:first-child{
-    border-top-left-radius: 0.5em;
-    border-bottom-left-radius: 0.5em;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
 
 .table td:last-child{
-    border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
 }
 
 .table th{
-    padding: 1em;
+    padding: 1rem;
     font-weight: 600;
     color: #002277;
     text-align: left;
 }
 
 .table td{
-    padding: 1em;
+    padding: 0.5rem 1rem;
     color: #6e6e6e;
     font-weight: 700;
 }
 
 .lastRow{
-    margin: 1em auto;
+    margin: 1rem auto;
     width: 90%;
 }
 

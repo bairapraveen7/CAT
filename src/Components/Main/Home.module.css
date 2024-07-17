@@ -1,5 +1,5 @@
 .home{
-    margin: 4em 0 0 8em;
+    margin: 4rem 0 0 8rem;
     text-align: left;
 }
 
@@ -14,7 +14,7 @@
 .mainText h2{
     font-family: "Quicksand";
     font-weight: 600;
-    font-size: 3.5em;
+    font-size: 3.5rem;
 }
 
 .mainText span{
@@ -22,24 +22,24 @@
 }
 
 .subText{
-    margin: 1em 0 0 0;
-    font-size: 1.2em;
+    margin: 1rem 0 0 0;
+    font-size: 1.2rem;
     line-height: 1.2;
     color: #40454d;
 }
 
  .form{
-    font-size: 0.9em;
+    font-size: 0.9rem;
 } 
 
 /* .homeInput::placeholder{
-    font-size: 0.775em;
+    font-size: 0.775rem;
 } */
 
 .formField{
-    width: 15rem;
+    width: 15vw;
 }
 
 .formNormal{
-    margin: 2em 0em;
+    margin: 2rem 0rem;
 }
