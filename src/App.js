@@ -3,8 +3,8 @@ import './App.css';
 import { HomePage } from './Pages/homePage';
 import { ThemeProvider } from '@emotion/react';
 import { createTheme } from '@mui/material';
+import { CustomInputRow } from './Components/Main/CustomInputRow';
 import { Header } from './Components/layout/Header';
-import { ClientPopup } from './Components/Main/ClientPopup';
 
 function App() {
   const theme = createTheme({
@@ -33,7 +33,6 @@ function App() {
     <div className="App">
       <Header />
       <HomePage /> 
-      {/* <ExampleWithProviders /> */}
     </div>
     </ThemeProvider>
   );

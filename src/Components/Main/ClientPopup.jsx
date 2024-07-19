@@ -4,13 +4,15 @@ import { AddCircle, CancelPresentation, Menu } from "@mui/icons-material";
 import { useEffect, useRef, useState } from "react";
 import ReactPaginate from 'react-paginate';
 import { ClientSpecific } from "../../Data/ClientSpecific";
+import { CustomInputRow } from "./CustomInputRow";
 
 const MenuTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
     [`& .${tooltipClasses.tooltip}`]: {
         backgroundColor: '#daf5fa',
-        color: '#8e8e8e'
+        color: '#8e8e8e',
+        boxShadow: 'rgba(0, 0, 0, 0.25) 0px 25px 50px -12px'
     },
     [`& .${tooltipClasses.arrow}`]: {
         color: '#daf5fa'
@@ -30,6 +32,7 @@ export const ClientPopup = ({ setOpenClientPopup }) => {
     const [page, setPage] = useState(0);
     const [filterData, setFilterData] = useState();
     const [anchorEl, setAnchorEl] = useState(null);
+    const [displayCustomInput,setDisplayCustomInput] = useState(false);
     const n = 5;
 
     useEffect(() => {
@@ -73,19 +76,25 @@ export const ClientPopup = ({ setOpenClientPopup }) => {
                         </FormGroup></td>
                         <td>
                             <MenuTooltip title={<PopoverContent popoverData={item.Subsidiary} />} placement="right-end" arrow>
-                                <IconButton>
+                                
                                     <Menu />
-                                </IconButton>
+                            
                             </MenuTooltip>
                         </td>
                     </tr>)
                 }
+                {
+                    displayCustomInput == true && 
+                    <tr>
+                    <CustomInputRow setDisplayCustomInput={setDisplayCustomInput}/>
+                </tr>
+}
             </table>
 
             <div className={classes.lastRow}>
                 <Grid container>
                     <Grid item xs={6}>
-                        <Button startIcon={<AddCircle />}>Add Row</Button>
+                        <Button onClick={() => setDisplayCustomInput(true)} startIcon={<AddCircle />}>Add Row</Button>
                     </Grid>
                     <Grid item xs={6}>
                         <Button variant="contained" sx={{ borderRadius: '3em', padding: '0.5em 2em' }}>Submit</Button>

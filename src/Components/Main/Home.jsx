@@ -95,12 +95,12 @@ export const Home = () => {
                 <Grid item xs={2.5}>
                   <Button
                     component="label"
-                    role={undefined}
                     variant="contained"
                     tabIndex={-1}
                     startIcon={<CloudUpload />}
                   >
                     Upload file
+                    <input type="file" hidden />
                   </Button>
                 </Grid>
               </Grid>

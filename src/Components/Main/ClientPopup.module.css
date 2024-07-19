@@ -12,6 +12,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    
 }
 
 .pagination{
@@ -40,7 +42,6 @@
 }
 
 .popoverIconHighlight{
-    background-color: #daf5fa;
     border-left: blue;
 }
 
@@ -59,6 +60,7 @@
 .table{
     width: 90%;
     border-spacing: 0 0.5rem;
+    text-align: center;
    
 }
 
@@ -67,8 +69,13 @@
 }
 
 .table td:first-child{
+    text-align: left;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
+}
+
+.table th:first-child{
+    text-align: left;
 }
 
 .table td:last-child{
@@ -80,11 +87,10 @@
     padding: 1rem;
     font-weight: 600;
     color: #002277;
-    text-align: left;
 }
 
 .table td{
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     color: #6e6e6e;
     font-weight: 700;
 }
