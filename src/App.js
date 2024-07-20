@@ -5,6 +5,7 @@ import { ThemeProvider } from '@emotion/react';
 import { createTheme } from '@mui/material';
 import { CustomInputRow } from './Components/Main/CustomInputRow';
 import { Header } from './Components/layout/Header';
+import { Xpage } from './Pages/Xpage';
 
 function App() {
   const theme = createTheme({
@@ -31,8 +32,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
-      <Header />
-      <HomePage /> 
+      {/* <Header />
+      <HomePage />  */}
+      <Xpage />
     </div>
     </ThemeProvider>
   );
