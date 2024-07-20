@@ -32,8 +32,8 @@ function App() {
     <ThemeProvider theme={theme}>
     <div className="App">
       {/* <Header />
-      <HomePage />  */}
-      <Xpage />
+      <HomePage />   */}
+       <Xpage />
     </div>
     </ThemeProvider>
   );
