@@ -11,6 +11,9 @@ function App() {
     palette:{
       primary:{
         main: '#002277'
+      },
+      secondary:{
+        main: '#ffffff'
       }
     },
     typography:{
