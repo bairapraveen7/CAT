@@ -1,5 +1,6 @@
-import { Delete, Download, DownloadForOffline } from "@mui/icons-material";
-import { Grid, InputLabel, Typography } from "@mui/material";
+import { Circle, Delete, Download, DownloadForOffline } from "@mui/icons-material";
+import { Box, CircularProgress, Grid, InputLabel, List, ListItem, ListItemText, Typography } from "@mui/material";
+import PropTypes from 'prop-types';
 import { Fragment } from "react";
 import classes from "./XpageComponent.module.css";
 
@@ -12,6 +13,39 @@ const LabelAnswerComponent = ({ label, subText, bigGrid }) => {
       </Typography>
     </Fragment>
   );
+};
+
+function CircularProgressWithLabel(props) {
+  return (
+    <Box sx={{ position: 'relative', display: 'inline-flex' }}>
+      <CircularProgress variant="determinate" {...props} />
+      <Box
+        sx={{
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0,
+          position: 'absolute',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Typography variant="caption" component="div" color="text.secondary">
+          {`${Math.round(props.value)}`}
+        </Typography>
+      </Box>
+    </Box>
+  );
+}
+
+CircularProgressWithLabel.propTypes = {
+  /**
+   * The value of the progress indicator for the determinate variant.
+   * Value between 0 and 100.
+   * @default 0
+   */
+  value: PropTypes.number.isRequired,
 };
 
 const NestedGridItem = () => {
@@ -38,7 +72,7 @@ const DownGridItem = () => {
     <div className={classes.downGridItem}>
       <div className={classes.downGridItemOne}>
         <Typography component="p" color="primary">Brand Definition</Typography>
-        <Typography component="p" color="primary">Similarity %</Typography>
+        <Typography component="p" color="primary"><CircularProgressWithLabel value={67} /> Similarity %</Typography>
       </div>
       <div className={classes.downGridItemTwo}>
         <div className={classes.downGridItemTwoHeading}>
@@ -109,6 +143,10 @@ export const XpageComponent = () => {
       <div className={classes.secondPart}>
         <DownGridItem />
         <DownGridItem />
+      </div>
+      <div className={classes.lastRow}>
+        <Typography component="p" sx={{mx: 2, color: 'orange'}}><Circle sx={{ fontSize: '0.5rem'}} /> Custom</Typography>
+        <Typography component="p" sx={{mx: 2, color: 'green'}}><Circle sx={{ fontSize: '0.5rem'}} /> Medispan</Typography>
       </div>
     </div>
   );
