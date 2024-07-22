@@ -55,19 +55,20 @@
 }
 
 .nestedGridItem{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 0.5rem;
     padding: 1rem;
 }
 
 .nestedGridItemOne{
-    grid-column: 1 / 3;
-    
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 0.5rem;
 }
 
 .nestedGridItemTwo{
-    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
 }
 
 .nestedGridItemFour{
@@ -83,9 +84,22 @@
 
 .gridItemOneInside{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto;
+    
     color: white;
     height: 100%;
+}
+
+.menuTooltipFragment{
+    font-size: 0.8rem;
+}
+
+.gridItemOneInsideTwo{
+    grid-column: 4 / 5;
+}
+
+.gridItemOneInsideThree{
+    grid-column: 1 / 5;
 }
 
 .gridItemTwo, .gridItemThree, .gridItemFour, .gridItemFive, .gridItemSix, .gridItemSeven{
