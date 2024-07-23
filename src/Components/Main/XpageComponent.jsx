@@ -85,11 +85,11 @@ const MenuTooltipFragment = () => {
   )
 }
 
-const NestedGridItem = () => {
+const NestedGridItem = ({label1,label2}) => {
   return (
     <div className={classes.nestedGridItem}>
       <div className={classes.nestedGridItemOne}>
-        <Typography component="p" color="primary" sx={{ fontWeight: 'bold' }}>Contract Term</Typography>
+        <Typography component="p" color="primary" sx={{ fontWeight: 'bold' }}>{label1}</Typography>
         <MenuTooltip title={<MenuTooltipFragment />} placement="right-end" arrow>
 
           <Menu />
@@ -97,7 +97,7 @@ const NestedGridItem = () => {
         </MenuTooltip>
       </div>
       <div className={classes.nestedGridItemTwo}>
-        <Typography component="p" color="primary" sx={{ fontWeight: 'bold' }}>Processed</Typography>
+        <Typography component="p" color="primary" sx={{ fontWeight: 'bold' }}>{label2}</Typography>
         <FormGroup>
           <CustomFormControlLabel
             color="success"
@@ -149,7 +149,7 @@ export const XpageComponent = () => {
               <LabelAnswerComponent label="Client Name" subText="Eternal Health Corporation" bigGrid={true} />
             </div>
             <div className={classes.gridItemOneInsideTwo}>
-              <DownloadForOffline />
+              <DownloadForOffline  />
             </div>
             <div className={classes.gridItemOneInsideThree}>
               <LabelAnswerComponent label="File Name" subText="Brand File Name sample_123456.PDF" bigGrid={true} />
@@ -169,32 +169,32 @@ export const XpageComponent = () => {
           </div>
         </div>
         <div className={classes.gridItemTwo}>
-          <NestedGridItem />
+          <NestedGridItem label1="Contract Term" label2="Processed" />
         </div>
         <div className={classes.gridItemThree}>
-          <NestedGridItem />
+          <NestedGridItem label1="Brand/Generic Definitions" label2="Feedback Required" />
         </div>
         <div className={classes.gridItemFour}>
-          <NestedGridItem />
+          <NestedGridItem label1="Rebate" label2="Processed" />
         </div>
         <div className={classes.gridItemFive}>
-          <NestedGridItem />
+          <NestedGridItem label1="Network" label2="Processed"/>
         </div>
         <div className={classes.gridItemSix}>
-          <NestedGridItem />
+          <NestedGridItem  label1="Non Financial Terms" label2="Processed" />
         </div>
         <div className={classes.gridItemSeven}>
           <NestedGridItem />
         </div>
       </div>
-      {/* <div className={classes.secondPart}>
+      <div className={classes.secondPart}>
         <DownGridItem />
         <DownGridItem />
       </div>
       <div className={classes.lastRow}>
         <Typography component="p" sx={{mx: 2, color: 'orange'}}><Circle sx={{ fontSize: '0.5rem'}} /> Custom</Typography>
         <Typography component="p" sx={{mx: 2, color: 'green'}}><Circle sx={{ fontSize: '0.5rem'}} /> Medispan</Typography>
-      </div> */}
+      </div>
     </div>
   );
 };

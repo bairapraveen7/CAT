@@ -36,7 +36,7 @@ function App() {
     <div className="App">
        {/* <Header />
       <HomePage />    */}
-       <Xpage />
+       <Xpage /> 
     </div>
     </ThemeProvider>
   );
