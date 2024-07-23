@@ -11,27 +11,27 @@
 
 .gridContainer{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: 20vw 5vw 20vw 20vw 20vw;
     grid-gap: 1.2rem;
     width: 90%;
     margin: 2rem auto;
 }
 
 .nestedGridItem{
-    padding: 1rem;
+    padding: 0.5rem 1rem;
 }
 
 .nestedGridItemOne{
      display: flex;
      justify-content: space-between;
-     margin-bottom: 0.5rem;
+     margin-bottom: 0.6rem;
 }
 
 .nestedGridItemTwo{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 0.5rem;
+    margin-top: 0.6rem;
 }
 
 .nestedGridItemFour{
@@ -40,33 +40,36 @@
 
 .gridItemOne{
     grid-area: 1 / 1 / 3 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     background-color: #002277;
     border-radius: 0.5em;
-    padding: 1rem;
+    padding: 1rem;  
 }
 
-.gridItemOneInside{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    
-    color: white;
-    height: 100%;
+.gridItemOneInsideOne{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gridItemOneInsideThree{
+    display: flex;
+    justify-content: space-between;
 }
 
 .menuTooltipFragment{
     font-size: 0.8rem;
-}
-
-.gridItemOneInsideTwo{
-    grid-column: 4 / 5;
-}
-
-.gridItemOneInsideThree{
-    grid-column: 1 / 5;
+    padding: 0.2rem;
 }
 
 .gridItemTwo, .gridItemThree, .gridItemFour, .gridItemFive, .gridItemSix, .gridItemSeven{
     background-color: white;
     border-radius: 0.5em;
+    transition: box-shadow 1s;
+}
+
+.gridItemTwo:hover, .gridItemThree:hover, .gridItemFour:hover, .gridItemFive:hover, .gridItemSix:hover, .gridItemSeven:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
 }
 
