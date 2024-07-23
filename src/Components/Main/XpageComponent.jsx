@@ -43,38 +43,7 @@ const CustomFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
 }
 ))
 
-function CircularProgressWithLabel(props) {
-  return (
-    <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-      <CircularProgress variant="determinate" {...props} />
-      <Box
-        sx={{
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          position: 'absolute',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Typography variant="caption" component="div" color="text.secondary">
-          {`${Math.round(props.value)}`}
-        </Typography>
-      </Box>
-    </Box>
-  );
-}
-
-CircularProgressWithLabel.propTypes = {
-  /**
-   * The value of the progress indicator for the determinate variant.
-   * Value between 0 and 100.
-   * @default 0
-   */
-  value: PropTypes.number.isRequired,
-};
+ 
 
 const MenuTooltipFragment = () => {
   return (
@@ -110,34 +79,6 @@ const NestedGridItem = ({label1,label2}) => {
     </div>
   );
 };
-
-const DownGridItem = () => {
-  return (
-    <div className={classes.downGridItem}>
-      <div className={classes.downGridItemOne}>
-        <Typography component="p" color="primary">Brand Definition</Typography>
-        <Typography component="p" color="primary"><CircularProgressWithLabel value={67} /> Similarity %</Typography>
-      </div>
-      <div className={classes.downGridItemTwo}>
-        <div className={classes.downGridItemTwoHeading}>
-          <Typography component="p" color="primary">Contract</Typography>
-          <Typography component="p" color="primary">Page No. 30</Typography>
-        </div>
-        <Typography component="p">Brand Products will be defined as all drugs and supplies with a valid NDC that meet all of the following criteria: (i) Medi-Span Multi-Source Code of 'M', 'N', or a valid NDC that meet all of the following criteria: (i) Medi-Span Multi-Source Code of "M", "N"</Typography>
-      </div>
-      <div className={classes.downGridItemThree}>
-        <Typography component="p" color="primary">CPM</Typography>
-        <Typography component="p">Brand Drug(s)" or"Brand" means single-source brand or source brand drugs determined brand drugs determined. means single-source brand or source brand drugs determined brand drugs determined</Typography>
-      </div>
-      <div className={classes.downGridItemFour}>
-        <Typography component="p">ADJ_MULTI_SOURCE_OVERRIDE IN (M,N,O) ADJ_MULTI_SOURCE_OVERRIDE IN (M,N,O)ADJ_MULTI_SOURCE_OVERRIDE IN (M,N,O)</Typography>
-      </div>
-      <div className={classes.downGridItemFive}>
-        <Typography component="p">ADJ_MULTI_SOURCE_OVERRIDE IN (M,N,O) ADJ_MULTI_SOURCE_OVERRIDE IN (M,N,O) ADJ_MULTI_SOURCE_OVERRIDE IN (M,N,0)</Typography>
-      </div>
-    </div>
-  )
-}
 
 export const XpageComponent = () => {
   return (
@@ -186,14 +127,6 @@ export const XpageComponent = () => {
         <div className={classes.gridItemSeven}>
           <NestedGridItem />
         </div>
-      </div>
-      <div className={classes.secondPart}>
-        <DownGridItem />
-        <DownGridItem />
-      </div>
-      <div className={classes.lastRow}>
-        <Typography component="p" sx={{mx: 2, color: 'orange'}}><Circle sx={{ fontSize: '0.5rem'}} /> Custom</Typography>
-        <Typography component="p" sx={{mx: 2, color: 'green'}}><Circle sx={{ fontSize: '0.5rem'}} /> Medispan</Typography>
       </div>
     </div>
   );
