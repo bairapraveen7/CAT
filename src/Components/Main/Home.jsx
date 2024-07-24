@@ -40,7 +40,7 @@ export const Home = () => {
           <div className={classes.form}>
             <Grid container>
               <Grid container className={classes.formNormal}>
-                <Grid item xs={2.5}>
+                <Grid item xs={2}>
                   <Autocomplete
                     freeSolo
                     id="free-solo-2-demo"
@@ -63,10 +63,10 @@ export const Home = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={2.5}>
+                <Grid item xs={2}>
                   <TextField size="small" placeholder="Agreement Number" className={classes.formField} />
                 </Grid>
-                <Grid item xs={2.5}>
+                <Grid item xs={2}>
                   <FormGroup>
                     <FormControlLabel
                       size="small"
@@ -95,17 +95,17 @@ export const Home = () => {
               </Grid>
               {AuditFormVisibility && (
                 <>
-                  <Grid item xs={2.5}>
+                  <Grid item xs={2}>
                     <TextField
                       size="small"
                       placeholder="Service Now Task Number"
                       className={classes.formField}
                     />
                   </Grid>
-                  <Grid item xs={2.5}>
+                  <Grid item xs={2}>
                     <TextField size="small" placeholder="PDFID##" className={classes.formField} />
                   </Grid>
-                  <Grid item xs={2.5}>
+                  <Grid item xs={2}>
                     <TextField size="small" placeholder="PDF Version ID" className={classes.formField} />
                   </Grid>
                 </>

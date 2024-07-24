@@ -3,7 +3,7 @@
 }
 
 .headline{
-    width: 42%;
+    width: 42vh;
 }
 
 .mainText{
@@ -29,13 +29,16 @@
 
  .form{
     font-size: 0.9rem;
-} 
+    position: relative;
+    top: 45vh;
+    left: 30vh;
+}
 
 /* .homeInput::placeholder{
     font-size: 0.775rem;
 } */
 
-.formField{
+.mediaField{
     width: 15vw;
 }
 
