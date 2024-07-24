@@ -20,13 +20,10 @@ const LinkSxstyle = {
 export const Header = () => {
   return (
     <Box className={classes.header}>
-      <div className={classes.heading}>
-        <Typography sx={{fontSize: '1.5em', fontStyle: 'italic'}}><span className={classes.firstLetterOrange}>C</span>ontract <span className={classes.firstLetterOrange}>A</span>nalysis <span className={classes.firstLetterOrange}>T</span>ool</Typography>
-      </div>
       <div className={classes.headerMenu}>
         <Link sx={LinkSxstyle}>Overview</Link>
-        <Link sx={{...LinkSxstyle, ml: 6, mr: 4}}>Upload Page</Link>
-        <Link sx={{...LinkSxstyle, ml:4, mr:6}}>Data Dictionary</Link>
+        <Link sx={{...LinkSxstyle, ml: 8, mr: 6}}>Upload Page</Link>
+        <Link sx={{...LinkSxstyle, ml:6, mr:8}}>Data Dictionary</Link>
         <Link sx={LinkSxstyle}>User Guide</Link>
       </div>
       <div className={classes.profile}>

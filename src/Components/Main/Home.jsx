@@ -37,20 +37,6 @@ export const Home = () => {
       </OpenClientPopup>
       <CloseClientPopup>
         <div className={classes.home}>
-          <div className={classes.headline}>
-            <div className={classes.mainText}>
-              <Typography variant="h2">
-                Step into the <span>Future of Innovation</span> with Us
-              </Typography>
-            </div>
-            <div className={classes.subText}>
-              <Typography variant="p">
-                A tool that translates Contract Terms & Conditions to "Process
-                language/code" and interfaces with the Pricing Database to
-                create the most reliable source of data for PBM Ops
-              </Typography>
-            </div>
-          </div>
           <div className={classes.form}>
             <Grid container>
               <Grid container className={classes.formNormal}>
@@ -92,17 +78,7 @@ export const Home = () => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={2.5}>
-                  <Button
-                    component="label"
-                    variant="contained"
-                    tabIndex={-1}
-                    startIcon={<CloudUpload />}
-                  >
-                    Upload file
-                    <input type="file" hidden />
-                  </Button>
-                </Grid>
+                 
               </Grid>
               <Grid item xs={12}>
                 <FormGroup sx={{ width: '15%' }}>
