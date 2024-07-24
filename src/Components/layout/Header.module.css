@@ -6,7 +6,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
+    position: relative;
+    top: 2.5vh;
+    font-size: 1vw;
     color: #012277;
     width: 70%;
     margin-left: auto 
