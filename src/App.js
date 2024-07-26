@@ -45,9 +45,9 @@ function App() {
     }
       }>
     <div className={appClass == SELECT_HOME ? classes.AppWithHomeBackground : classes.AppWithPopupBackground}>
-       {/* <Header />
-      <HomePage />    */}
-        <Xpage />  
+       <Header />
+      <HomePage />   
+        {/* <Xpage />   */}
     </div>
     </BackgroundContext.Provider>
     </ThemeProvider>

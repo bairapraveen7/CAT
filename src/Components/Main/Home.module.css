@@ -14,7 +14,7 @@
 .mainText h2{
     font-family: "Quicksand";
     font-weight: 600;
-    font-size: 3.5rem;
+    font-size: 3.6vw;
 }
 
 .mainText span{
@@ -23,7 +23,7 @@
 
 .subText{
     margin: 1rem 0 0 0;
-    font-size: 1.2rem;
+    font-size: 1.3vw;
     line-height: 1.2;
     color: #40454d;
 }
@@ -37,63 +37,11 @@
 } */
 
 .formField{
-    width: 15rem;
+    width: 15vw;
 }
 
 .formNormal{
     margin: 2rem 0rem;
 }
 
-.home{
-    margin: 4rem 0 0 8rem;
-    text-align: left;
-}
-
-.headline{
-    width: 42%;
-}
-
-.mainText{
-  color: #8e8e8e;
-}
-
-.mainText h2{
-    font-family: "Quicksand";
-    font-weight: 600;
-    font-size: 3.5rem;
-}
-
-.mainText span{
-    color: #002277;
-}
-
-.subText{
-    margin: 1rem 0 0 0;
-    font-size: 1.2rem;
-    line-height: 1.2;
-    color: #40454d;
-}
-
- .form{
-    font-size: 0.9rem;
-} 
-
-/* .homeInput::placeholder{
-    font-size: 0.775em;
-} */
-
-.formField{
-    width: 15rem;
-}
-
-.formNormal{
-    margin: 2rem 0rem;
-}
-
-.uploadContract{
-  position: relative;
-  top: 3em;
-  right: 6em;
-}
-
-
+ 

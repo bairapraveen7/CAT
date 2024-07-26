@@ -5,7 +5,7 @@
 .popup{
     width: 100%;
     font-size: 0.8rem;
-    margin-top: 3rem;
+    margin-top: 10vh;
     font-weight: 600;
     flex-grow: 1;
     display: flex;

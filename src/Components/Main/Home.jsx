@@ -9,6 +9,7 @@ import {
   FormControlLabel,
   FormGroup,
   Grid,
+  Link,
   TextField,
   Typography,
   makeStyles,
@@ -99,9 +100,17 @@ export const Home = () => {
                   </FormGroup>
                 </Grid>
                  <Grid item xs={2.5}>
-                  <Typography sx={{position: 'relative',
-  top: '3em',
-  right: '6em', width: '1vw'}} color="secondary" variant="p">Upload Contract</Typography>
+                 <Link
+                    component="label"
+                    variant="contained"
+                    tabIndex={-1}
+                    underline="none"
+                    color="secondary"
+                    sx={{position: 'relative', top: '3rem', right: '5rem',fontSize: '0.8rem', cursor: 'pointer'}}
+                >
+                    Upload contract
+                    <input type="file" hidden />
+                </Link>
                  </Grid>
               </Grid>
               <Grid item xs={12}>
@@ -137,7 +146,7 @@ export const Home = () => {
             </Grid>
               <Button
                 variant="contained"
-                sx={{ backgroundColor: "#002277", my: 4 }}
+                sx={{ backgroundColor: "#002277", my: 8 }}
               >
               Submit
             </Button>
