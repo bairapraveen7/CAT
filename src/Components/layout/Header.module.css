@@ -11,7 +11,8 @@
     font-size: 1vw;
     color: #012277;
     width: 70%;
-    margin-left: auto 
+    margin-left: auto;
+    margin-right: 2em;
 }
 
 .heading{
@@ -21,7 +22,6 @@
 .profile{
     display: flex;
     align-items: center;
-    color: #ffffff;
 }
 
 @media (max-height: 500px) {

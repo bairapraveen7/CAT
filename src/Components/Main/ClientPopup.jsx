@@ -1,10 +1,13 @@
 import { Button, Checkbox, Dialog, Divider, FormControlLabel, FormGroup, Grid, IconButton, Popover, Tooltip, Typography, styled, tooltipClasses } from "@mui/material";
 import classes from "./ClientPopup.module.css"
 import { AddCircle, CancelPresentation, Menu } from "@mui/icons-material";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import ReactPaginate from 'react-paginate';
 import { ClientSpecific } from "../../Data/ClientSpecific";
 import { CustomInputRow } from "./CustomInputRow";
+import { BackgroundContext } from "../../Hooks/BackgroundContext";
+import AppClasses from '../../App.module.css';
+import { SELECT_HOME } from "../../Data/Config";
 
 const MenuTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
@@ -33,6 +36,7 @@ export const ClientPopup = ({ setOpenClientPopup }) => {
     const [filterData, setFilterData] = useState();
     const [anchorEl, setAnchorEl] = useState(null);
     const [displayCustomInput,setDisplayCustomInput] = useState(false);
+    const {value,setValue} = useContext(BackgroundContext);
     const n = 5;
 
     useEffect(() => {
@@ -49,7 +53,11 @@ export const ClientPopup = ({ setOpenClientPopup }) => {
     return (
         <div className={classes.popup}>
 
-            <Button startIcon={<CancelPresentation />} sx={{ justifyContent: 'flex-end', margin: '0 5em 0 auto' }} onClick={() => setOpenClientPopup(false)}></Button>
+            <Button startIcon={<CancelPresentation />} sx={{ justifyContent: 'flex-end', margin: '0 5em 0 auto' }} onClick={() => {
+                setOpenClientPopup(false);
+                setValue(SELECT_HOME)
+            }}
+                ></Button>
 
 
             <table className={classes.table}>

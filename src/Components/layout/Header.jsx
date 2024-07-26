@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Box from "@mui/material/Box";
 import {
   AppBar,
@@ -12,26 +12,32 @@ import {
 } from "@mui/material";
 import PersonPinIcon from "@mui/icons-material/PersonPin";
 import classes from "./Header.module.css";
+import { BackgroundContext } from "../../Hooks/BackgroundContext";
+import AppClasses from '../../App.module.css'
+import { SELECT_HOME } from "../../Data/Config";
 
 const LinkSxstyle = {
   color: '#012277',textDecoration: 'none',fontWeight: 600, fontSize: '0.9em'
 }
 
 export const Header = () => {
+  const { value, setValue}  = useContext(BackgroundContext);
+  const color = value == SELECT_HOME ? 'secondary' : 'primary';
+
   return (
     <Box className={classes.header}>
       <div className={classes.headerMenu}>
         <Link sx={LinkSxstyle}>Overview</Link>
-        <Link sx={{...LinkSxstyle, ml: 8, mr: 4}}>Upload Page</Link>
-        <Link sx={{...LinkSxstyle, ml:4, mr:8}}>Data Dictionary</Link>
+        <Link sx={{...LinkSxstyle, ml: 10, mr: 5}}>Upload Page</Link>
+        <Link sx={{...LinkSxstyle, ml:5, mr:10}}>Data Dictionary</Link>
         <Link sx={LinkSxstyle}>User Guide</Link>
       </div>
       <div className={classes.profile}>
-        <Typography variant="p">Welcome</Typography>
-        <Button variant="outlined" sx={{ borderRadius: "3em", mx: "1em" }}>
+        {color && <Typography variant="p" color="secondary">Welcome</Typography>}
+        <Button variant="outlined" color={color} sx={{ borderRadius: "3em", mx: "1em" }}>
           Rohit Agarwal
         </Button>
-        <PersonPinIcon />
+        <PersonPinIcon color={color} fontSize="large" />
       </div>
     </Box>
   );
