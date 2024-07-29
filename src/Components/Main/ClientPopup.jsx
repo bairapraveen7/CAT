@@ -64,7 +64,7 @@ export const ClientPopup = ({ setOpenClientPopup }) => {
 
                 <tr>
                     <th>File Name</th>
-                    <th>Request Number</th>
+                    <th>Agreement Number</th>
                     <th>PDF ID</th>
                     <th>PDF Version ID</th>
                     <th>Service Now</th>
@@ -72,7 +72,7 @@ export const ClientPopup = ({ setOpenClientPopup }) => {
                 {
                     filterData && filterData.map((item) => <tr>
                         <td>{item.FileName}</td>
-                        <td>{item.RequestNumber}</td>
+                        <td>{item.AgreementNumber}</td>
                         <td>{item.PDFID}</td>
                         <td>{item.PDFVersionID}</td>
                         <td>{item.ServiceNow}</td>
@@ -170,13 +170,13 @@ const PopoverContent = ({ popoverData }) => {
             <Divider />
             <div className={classes.popoverItem}>
                 <Typography variant="p" sx={PopoverItemHeadingSxstyle}>Contract State</Typography>
-                <Typography variant="p" sx={PopoverItemContentSxstyle}>{popoverData['Review Version']}</Typography>
+                <Typography variant="p" sx={PopoverItemContentSxstyle}>{popoverData['Contract State']}</Typography>
 
             </div>
             <Divider />
             <div className={classes.popoverItem}>
-                <Typography variant="p" sx={PopoverItemHeadingSxstyle}>Agreement No</Typography>
-                <Typography variant="p" sx={PopoverItemContentSxstyle}>{popoverData['Review Version']}</Typography>
+                <Typography variant="p" sx={PopoverItemHeadingSxstyle}>Request No</Typography>
+                <Typography variant="p" sx={PopoverItemContentSxstyle}>{popoverData['Request No']}</Typography>
 
             </div>
         </div>

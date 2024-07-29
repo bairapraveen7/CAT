@@ -1,13 +1,12 @@
 import { Menu, DownloadForOffline, DownloadForOfflineOutlined, BorderColor } from "@mui/icons-material";
 import { Box, Checkbox, CircularProgress, Divider, FormControlLabel, FormGroup, Grid, InputLabel, List, ListItem, ListItemText, Tooltip, Typography, styled, tooltipClasses } from "@mui/material";
-import PropTypes from 'prop-types';
-import { Fragment } from "react";
 import classes from "./XpageComponent.module.css";
 
 const TooltipLabelAnswerComponent = ({ label, subText  }) => {
+  
   return (
     <div>
-      <Typography component="p" color=  '#85868b' sx={  {fontWeight:'600', fontSize: '0.6rem' }}>{label}</Typography>
+      <Typography component="p" color= '#85868b' sx={  {fontWeight:'600', fontSize: '0.6rem' }}>{label}</Typography>
       <Typography component="p" color= 'primary' sx={  { fontWeight: '700', fontSize: '0.6rem' }}>
         {subText}
       </Typography>
@@ -15,7 +14,7 @@ const TooltipLabelAnswerComponent = ({ label, subText  }) => {
   );
 };
 
-const BigGridLabelSubtextComponent = ({label,subText}) => {
+const BigGridLabelAnswerComponent = ({label,subText}) => {
   return (
     <div>
       <Typography component="p" color='secondary'  sx={ { fontWeight: '400', fontSize: '0.6rem' }}>{label}</Typography>
@@ -29,9 +28,6 @@ const BigGridLabelSubtextComponent = ({label,subText}) => {
 const MenuTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
-  [`& .MuiTooltip-tooltip`]: {
-
-  },
   [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: '#ffffff',
     color: '#8e8e8e',
@@ -62,8 +58,6 @@ const CustomFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
 }
 ))
 
-
-
 const MenuTooltipFragment = () => {
   return (
     <div className={classes.menuTooltipFragment}>
@@ -74,27 +68,23 @@ const MenuTooltipFragment = () => {
       <Typography component="div">
       <TooltipLabelAnswerComponent  label="Validated By" subText="Rohit" />
       </Typography>
-      
     </div>
   )
 }
 
-const NestedGridItem = ({ label1, label2 }) => {
+const NestedGridItem = ({ labelOne, labelTwo }) => {
   return (
     <div className={classes.nestedGridItem}>
       <div className={classes.nestedGridItemOne}>
-        <Typography component="p" color="primary" sx={{ fontWeight: 'bold' }}>{label1}</Typography>
+        <Typography component="p" color="primary" sx={{ fontWeight: 'bold' }}>{labelOne}</Typography>
         <MenuTooltip title={<MenuTooltipFragment />} placement="right-end" arrow>
-
           <Menu />
-
         </MenuTooltip>
       </div>
       <div className={classes.nestedGridItemTwo}>
-        <Typography component="p" color="primary" sx={{ fontWeight: 'bold' }}>{label2}</Typography>
+        <Typography component="p" color="primary" sx={{ fontWeight: 'bold' }}>{labelTwo}</Typography>
         <FormGroup>
           <CustomFormControlLabel
-            color="success"
             control={<Checkbox size="large" />}
             label="Audit"
             sx={{ margin: 0 }}
@@ -110,42 +100,37 @@ export const XpageComponent = () => {
     <div className={classes.xPage}>
       <div className={classes.gridContainer}>
         <div className={classes.gridItemOne}>
-
-          <div className={classes.gridItemOneInsideOne}>
-            <BigGridLabelSubtextComponent label="Client Name" subText="Eternal Health Corporation"   />
+          <div className={classes.itemOne}>
+            <BigGridLabelAnswerComponent label="Client Name" subText="Eternal Health Corporation"   />
             <DownloadForOfflineOutlined sx={{
               fontSize: '2rem',
               color: '#ffffff'
             }}/>
           </div>
-          <div className={classes.gridItemOneInsideTwo}>
-            <BigGridLabelSubtextComponent label="File Name" subText="Brand File Name sample_123456.PDF"   />
+          <div className={classes.itemTwo}>
+            <BigGridLabelAnswerComponent label="File Name" subText="Brand File Name sample_123456.PDF"   />
           </div>
-          <div className={classes.gridItemOneInsideThree}>
-            <BigGridLabelSubtextComponent label="Agreement Number" subText="985674839301123"   />
-
-            <BigGridLabelSubtextComponent label="PDF ID" subText="1234" />
-
-            <BigGridLabelSubtextComponent label="Version ID" subText="030"   />
-
-            <BigGridLabelSubtextComponent label="Audit Version" subText="#01"   />
+          <div className={classes.itemThree}>
+            <BigGridLabelAnswerComponent label="Agreement Number" subText="985674839301123"   />
+            <BigGridLabelAnswerComponent label="PDF ID" subText="1234" />
+            <BigGridLabelAnswerComponent label="Version ID" subText="030"   />
+            <BigGridLabelAnswerComponent label="Audit Version" subText="#01"   />
           </div>
-
         </div>
         <div className={classes.gridItemTwo}>
-          <NestedGridItem label1="Contract Term" label2="Processed" />
+          <NestedGridItem labelOne="Contract Term" labelTwo="Processed" />
         </div>
         <div className={classes.gridItemThree}>
-          <NestedGridItem label1="Brand/Generic Definitions" label2="Feedback Required" />
+          <NestedGridItem labelOne="Brand/Generic Definitions" labelTwo="Feedback Required" />
         </div>
         <div className={classes.gridItemFour}>
-          <NestedGridItem label1="Rebate" label2="Processed" />
+          <NestedGridItem labelOne="Rebate" labelTwo="Processed" />
         </div>
         <div className={classes.gridItemFive}>
-          <NestedGridItem label1="Network" label2="Processed" />
+          <NestedGridItem labelOne="Network" labelTwo="Processed" />
         </div>
         <div className={classes.gridItemSix}>
-          <NestedGridItem label1="Non Financial Terms" label2="Processed" />
+          <NestedGridItem labelOne="Non Financial Terms" labelTwo="Processed" />
         </div>
         <div className={classes.gridItemSeven}>
           <NestedGridItem />

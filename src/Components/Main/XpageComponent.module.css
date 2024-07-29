@@ -4,17 +4,37 @@
     font-size: 0.9rem;
 }
 
-.downGridItemTwoHeading{
-    display: flex;
-    justify-content: space-between;
-}
-
 .gridContainer{
     display: grid;
     grid-template-columns: 20vw 5vw 20vw 20vw 20vw;
     grid-gap: 1.2rem;
     width: 90%;
     margin: 2rem auto;
+}
+
+.gridItemOne{
+    grid-area: 1 / 1 / 3 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #002277;
+    border-radius: 0.5em;
+    padding: 1rem;  
+}
+
+.gridItemTwo, .gridItemThree, .gridItemFour, .gridItemFive, .gridItemSix, .gridItemSeven{
+    background-color: white;
+    border-radius: 0.5em;
+    transition: box-shadow 1s;
+}
+
+.gridItemTwo:hover, .gridItemThree:hover, .gridItemFour:hover, .gridItemFive:hover, .gridItemSix:hover, .gridItemSeven:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+}
+
+.itemOne, .itemThree{
+    display: flex;
+    justify-content: space-between;
 }
 
 .nestedGridItem{
@@ -34,42 +54,6 @@
     margin-top: 0.6rem;
 }
 
-.nestedGridItemFour{
-    grid-column: 3 / 4;
-}
 
-.gridItemOne{
-    grid-area: 1 / 1 / 3 / 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: #002277;
-    border-radius: 0.5em;
-    padding: 1rem;  
-}
 
-.gridItemOneInsideOne{
-    display: flex;
-    justify-content: space-between;
-}
-
-.gridItemOneInsideThree{
-    display: flex;
-    justify-content: space-between;
-}
-
-.menuTooltipFragment{
-    font-size: 0.8rem;
-    padding: 0.2rem;
-}
-
-.gridItemTwo, .gridItemThree, .gridItemFour, .gridItemFive, .gridItemSix, .gridItemSeven{
-    background-color: white;
-    border-radius: 0.5em;
-    transition: box-shadow 1s;
-}
-
-.gridItemTwo:hover, .gridItemThree:hover, .gridItemFour:hover, .gridItemFive:hover, .gridItemSix:hover, .gridItemSeven:hover{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
-}
 
