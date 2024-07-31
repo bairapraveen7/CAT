@@ -9,6 +9,7 @@ import classes from './App.module.css'
 import { useState } from 'react';
 import { BackgroundContext } from './Hooks/BackgroundContext';
 import { SELECT_HOME } from './Data/Config';
+import ExampleWithProviders from './Components/Table/ExampleTable';
 
 function App() {
   const theme = createTheme({
@@ -45,9 +46,10 @@ function App() {
     }
       }>
     <div className={appClass == SELECT_HOME ? classes.AppWithHomeBackground : classes.AppWithPopupBackground}>
-       <Header />
-      <HomePage />   
+       {/* <Header />
+      <HomePage />    */}
         {/* <Xpage />   */}
+        <ExampleWithProviders />
     </div>
     </BackgroundContext.Provider>
     </ThemeProvider>
