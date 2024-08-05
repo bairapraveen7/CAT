@@ -4,7 +4,7 @@ import {
   // createRow,
   useMaterialReactTable,
 } from 'material-react-table';
-import { Box, Button, IconButton, Tooltip } from '@mui/material';
+import { Autocomplete, Box, Button, IconButton, TextField, Tooltip } from '@mui/material';
 import {
   QueryClient,
   QueryClientProvider,
@@ -18,6 +18,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const Example = () => {
   const [validationErrors, setValidationErrors] = useState({});
+  const [firstName,setFirstName] = useState('');
+  console.log("Table is rendering")
 
   const columns = useMemo(
     () => [
@@ -30,6 +32,14 @@ const Example = () => {
       {
         accessorKey: 'firstName',
         header: 'First Name',
+        Edit: ({row}) => {
+             return (
+             <TextField value={row.original.firstName} onChange={(e) => {
+                row.original.firstName="praveen"
+                row.original.state="namrada"
+             }} />
+             )
+        },
         muiEditTextFieldProps: {
           required: true,
           error: !!validationErrors?.firstName,
@@ -77,8 +87,54 @@ const Example = () => {
       {
         accessorKey: 'state',
         header: 'State',
-        editVariant: 'select',
-        editSelectOptions: usStates,
+        Edit: ({ row }) => {
+            console.log(row)
+            return (
+              <Autocomplete
+                freeSolo
+                options={usStates}
+                value={row.original.state}
+                isOptionEqualToValue={(option, value) =>
+                  option.value === value.value
+                }
+                onInputChange={(event, newInputValue) => {
+                    row._valuesCache.state=newInputValue;
+                  row._valuesCache.firstName = "Praveen";
+                }}
+                onChange={(event, newValue) => {
+                    console.log(row)
+                    row._valuesCache.state=newValue;
+                    row._valuesCache.firstName = "Praveen";
+                }}
+                renderInput={(params) => (
+                  <div
+                    style={{ borderBottom: "1px solid rgba(0, 0, 0, 0.42)" }}
+                    ref={params.InputProps.ref}
+                  >
+                    <input
+                      placeholder="Contract SQL Logic"
+                      style={{
+                        border: 0,
+                        background: "none",
+                        color: "currentColor",
+                        width: "100%",
+                        outline: "none",
+                        fontSize: "16px",
+                        padding: "4px 0 5px",
+                      }}
+                      type="text"
+                      {...params.inputProps}
+                    />
+                  </div>
+                )}
+              />
+            );
+          },
+          Cell: ({ renderedCellValue, row }) => (
+            <span>
+              {renderedCellValue}
+            </span>
+          ),
         muiEditTextFieldProps: {
           select: true,
           error: !!validationErrors?.state,

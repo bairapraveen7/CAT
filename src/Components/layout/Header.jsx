@@ -26,6 +26,9 @@ export const Header = () => {
 
   return (
     <Box className={classes.header}>
+      <div className={classes.title}>
+        <img src="images/CAT_TITLE.png" />
+      </div>
       <div className={classes.headerMenu}>
         <Link sx={LinkSxstyle}>Overview</Link>
         <Link sx={{...LinkSxstyle, ml: 10, mr: 5}}>Upload Page</Link>
