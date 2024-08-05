@@ -1,6 +1,9 @@
 .home{
-    margin: 15vh 0 0 15vh;
+    padding: 10vh 0 0 15vh;
     text-align: left;
+    background-image: url('../../../public/images/LEFT_SHAPE.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .headline{
@@ -20,6 +23,27 @@
 .mainText span{
     color: #002277;
 }
+
+.uploadDiv{
+   position: relative;
+}
+
+.uploadImage{
+    position: absolute;
+    background-image: url('../../../public/images/Upload_Button.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -5vh;
+    left: -3vw;
+    width: 50%;
+    height: 25vh;
+}
+
+.uploadFile{
+   width: 100%;
+   height: 100%;
+}
+
 
 .subText{
     margin: 1rem 0 0 0;

@@ -92,25 +92,17 @@ export const Home = () => {
                     <FormControlLabel
                       size="small"
                       control={<Checkbox />}
-                      className={classes.formCheckbox}
+                      className={classes.formField}
                       label={
                         <Typography>Signed Contract*</Typography>
                       }
                     />
                   </FormGroup>
                 </Grid>
-                 <Grid item xs={2.5}>
-                 <Link
-                    component="label"
-                    variant="contained"
-                    tabIndex={-1}
-                    underline="none"
-                    color="secondary"
-                    sx={{position: 'relative', top: '3rem', right: '5rem',fontSize: '0.8rem', cursor: 'pointer'}}
-                >
-                    Upload contract
-                    <input type="file" hidden />
-                </Link>
+                 <Grid item xs={2.5} className={classes.uploadDiv}>
+                  <div className={classes.uploadImage}>
+                    <input type="file" className={classes.uploadFile} hidden />
+                  </div>
                  </Grid>
               </Grid>
               <Grid item xs={12}>
